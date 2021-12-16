@@ -1,5 +1,6 @@
 import argparse
 import time
+import sys
 from libs.utorrentapi import UTorrentAPI
 
 parser = argparse.ArgumentParser()
@@ -9,6 +10,9 @@ parser.add_argument("--password", "-p", help="[required] Web login password")
 parser.add_argument("--days", "-d", help="Allow number of seed days before delete torrent, default: 7", default='7')
 parser.add_argument("--test", "-t", help="Test mode, default: False", default='0')
 args = parser.parse_args()
+
+if getattr(sys, 'frozen', False):
+    from sys import exit
 
 def test(server_url: str, username: str, password: str, seed_days: int = 0):
     """
