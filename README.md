@@ -17,6 +17,14 @@ This tool based on api source from this project: https://github.com/LakithaRav/u
 
 > Execute file build with `pyinstaller` on Windows 10 OS x64, this may not run in older Windows version (not test)
 
+Build commands:
+```bat
+# one file
+pyinstaller --onefile main.py
+# one file and no console
+pyinstaller --onefile --noconsole main.py
+```
+
 You can run this tool from pre-complite file in folder *release*, file name: `putorrent_win_x64.exe`
 
 Example: `putorrent_win_x64.exe -s "http://server:port/gui" -u "admin" -p "passdxxx"`
